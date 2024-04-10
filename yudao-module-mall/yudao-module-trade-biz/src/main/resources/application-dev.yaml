@@ -39,21 +39,19 @@ spring:
       primary: master
       datasource:
         master:
-          name: ruoyi-vue-pro
-          url: jdbc:mysql://400-infra.server.iocoder.cn:3306/${spring.datasource.dynamic.datasource.master.name}?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT&nullCatalogMeansCurrent=true
-          driver-class-name: com.mysql.jdbc.Driver
-          username: root
-          password: 3WLiVUBEwTbvAfsh
-        slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据自己需要修改
-          name: ruoyi-vue-pro
-          url: jdbc:mysql://400-infra.server.iocoder.cn:3306/${spring.datasource.dynamic.datasource.slave.name}?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT&nullCatalogMeansCurrent=true
-          driver-class-name: com.mysql.jdbc.Driver
-          username: root
-          password: 3WLiVUBEwTbvAfsh
+          name: jsxk
+          url: jdbc:mysql://42.192.110.102:3306/${spring.datasource.dynamic.datasource.master.name}?allowMultiQueries=true&useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+          username: jsxk
+          password: Jsxk@119119
+        slave: # 模拟从库，可根据自己需要修改
+          name: jsxk
+          url: jdbc:mysql://122.51.119.204:3306/${spring.datasource.dynamic.datasource.slave.name}?allowMultiQueries=true&useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+          username: jsxk
+          password: Jsxk@119119
 
   # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
   redis:
-    host: 400-infra.server.iocoder.cn # 地址
+    host: 122.51.119.204 # 地址
     port: 6379 # 端口
     database: 1 # 数据库索引
 #    password: 123456 # 密码，建议生产环境开启
@@ -103,5 +101,5 @@ yudao:
   web:
     admin-ui:
       url: http://dashboard.yudao.iocoder.cn # Admin 管理后台 UI 的地址
-  demo: true # 开启演示模式
+  demo: false # 开启演示模式
   tencent-lbs-key: TVDBZ-TDILD-4ON4B-PFDZA-RNLKH-VVF6E # QQ 地图的密钥 https://lbs.qq.com/service/staticV2/staticGuide/staticDoc
